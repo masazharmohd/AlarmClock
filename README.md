@@ -22,8 +22,8 @@
 
 
 
-## GitHub Action
-In your main app directory create the .github folder inside which the workflows one. Then create a deploy.yaml file.
+## Project Demo
+
 
 ![Screenshot (139)](https://user-images.githubusercontent.com/109335469/212459811-31a646f2-9ef6-4b22-8d30-b2235e8bfa3d.png)
  # Steps of GitHub Action :-
