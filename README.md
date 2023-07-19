@@ -25,7 +25,7 @@
 ## Project Demo
 
 
-![Screenshot (139)](https://user-images.githubusercontent.com/109335469/212459811-31a646f2-9ef6-4b22-8d30-b2235e8bfa3d.png)
+![Screenshot (139)](https://drive.google.com/file/d/1pzMxThDyv4up4i-1v3apon5FOHraLiaB/view?usp=sharing)
  # Steps of GitHub Action :-
  1.Click on the setting of the Repo  choose Secrets and variables
  
