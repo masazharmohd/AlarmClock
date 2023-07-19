@@ -100,4 +100,11 @@ setInterval(() => {
 
   const time = document.getElementById("watchTime");
   time.innerHTML = hr + ':' + min + ':' + sec;
+
+  alarms.forEach((alarm, index) => {
+    if(alarm == hr + ':' + min + ':' + sec){
+      alert("Your alarm will start now.");
+    }
+  })
+
 }, 1000);

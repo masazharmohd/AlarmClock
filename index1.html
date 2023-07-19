@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Alarm Clock</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        #clock {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        #alarms {
+            list-style-type: none;
+            padding: 0;
+        }
+        #alarms li {
+            margin-bottom: 10px;
+        }
+        #alarms li button {
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Alarm Clock</h1>
+    <div id="clock"></div>
+    <div>
+        <label for="hour">Hour:</label>
+        <input type="number" id="hour" min="1" max="12">
+        <label for="minute">Minute:</label>
+        <input type="number" id="minute" min="0" max="59">
+        <label for="second">Second:</label>
+        <input type="number" id="second" min="0" max="59">
+        <label for="ampm">AM/PM:</label>
+        <select id="ampm">
+            <option value="am">AM</option>
+            <option value="pm">PM</option>
+        </select>
+        <button id="setAlarmBtn">Set Alarm</button>
+    </div>
+    <ul id="alarms"></ul>
+
+    <script>
+        // Clock
+        function updateClock() {
+            var now = new Date();
+            var hours = now.getHours();
+            var minutes = now.getMinutes();
+            var seconds = now.getSeconds();
+            var ampm = hours >= 12 ? 'PM' : 'AM';
+
+            hours = hours % 12;
+            hours = hours ? hours : 12;
+            minutes = minutes < 10 ? '0' + minutes : minutes;
+            seconds = seconds < 10 ? '0' + seconds : seconds;
+
+            var timeString = hours + ':' + minutes + ':' + seconds + ' ' + ampm;
+
+            document.getElementById('clock').textContent = timeString;
+            setTimeout(updateClock, 1000);
+        }
+
+        updateClock();
+
+        // Alarm
+        var alarms = [];
+
+        function setAlarm() {
+            var hour = parseInt(document.getElementById('hour').value);
+            var minute = parseInt(document.getElementById('minute').value);
+            var second = parseInt(document.getElementById('second').value);
+            var ampm = document.getElementById('ampm').value;
+
+            var alarmTime = {
+                hour: hour,
+                minute: minute,
+                second: second,
+                ampm: ampm
+            };
+
+            alarms.push(alarmTime);
+            addAlarmToList(alarmTime);
+        }
+
+        function addAlarmToList(alarm) {
+            var alarmsList = document.getElementById('alarms');
+            var alarmString = alarm.hour + ':' + alarm.minute + ':' + alarm.second + ' ' + alarm.ampm;
+            var listItem = document.createElement('li');
+            listItem.textContent = alarmString;
+
+            var deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.addEventListener('click', function() {
+                deleteAlarm(alarm);
+            });
+
+            listItem.appendChild(deleteButton);
+            alarmsList.appendChild(listItem);
+        }
+
+        function deleteAlarm(alarm) {
+            var index = alarms.indexOf(alarm);
+            alarms.splice(index, 1);
+
+            var alarmsList = document.getElementById('alarms');
+            alarmsList.innerHTML = '';
+
+            alarms.forEach(function(alarm) {
+                addAlarmToList(alarm);
+            });
+        }
+
+        document.getElementById('setAlarmBtn').addEventListener('click', setAlarm);
+    </script>
+</body>
+</html>
