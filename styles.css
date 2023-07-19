@@ -1,0 +1,155 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+/* Heading */
+h1 {
+  text-align: center;
+}
+
+/* main container for all html content */
+#main-container{
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+}
+#watchTime{
+  font-size: 20px;
+  font-weight: 800;
+}
+/* alarm container */
+#alarm-container{
+  width: 40%;
+  height: 80%;
+  background-color: aliceblue;
+  border: 5px solid skyblue;
+  text-align: center;
+  border-radius: 20%;
+}
+
+/* form css */
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* label css */
+label {
+  margin: 10px;
+  font-size: 20px;
+  font-weight: 700;
+}
+/* input box css */
+input {
+  margin: 10px;
+  width: 200px;
+}
+/* set alarm button css */
+button {
+  margin: 10px;
+  padding: 5px;
+  height: 30px;
+  width: 100px;
+  border: none;
+  background-color: skyblue;
+  color: white;
+}
+
+
+
+ul {
+  width: 100%;
+  height: 320px;
+  /* list-style-type: none; */
+  padding: 0;
+  overflow: auto;
+}
+
+li {
+  width: 100%;
+  margin-bottom: 10px;
+}
+li span{
+  font-size: 20px;
+  font-weight: 700;
+  margin-right: 100px;
+}
+li button{
+  padding: 5px;
+  height: 30px;
+  width: 100px;
+  border: none;
+  background-color: skyblue;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  #alarm-container {
+    width: 100%;
+  }
+  
+  #alarms-list {
+    width: 100%;
+    height: 100%;
+  }
+  
+  form {
+    flex-direction: column;
+  }
+  
+  button {
+    margin-top: 10px;
+  }
+}
+
+/* analog clock css*/
+#clockContainer {
+  position: relative;
+  margin: auto;
+  height: 10vw;
+  /*to make the height and width responsive*/
+  width: 10vw;
+  background: url(assest/clock.png) no-repeat;
+  /*setting our background image*/
+  background-size: 100%;
+  border-radius: 50%;
+}
+
+#hour,
+#minute,
+#second {
+  position: absolute;
+  background: black;
+  border-radius: 10px;
+  transform-origin: bottom;
+}
+
+#hour {
+  width: 1.8%;
+  height: 25%;
+  top: 25%;
+  left: 48.85%;
+  opacity: 0.8;
+}
+
+#minute {
+  width: 1.6%;
+  height: 30%;
+  top: 19%;
+  left: 48.9%;
+  opacity: 0.8;
+}
+
+#second {
+  width: 1%;
+  height: 40%;
+  top: 9%;
+  left: 49.25%;
+  opacity: 0.8;
+}

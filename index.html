@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Alarm App</title>
+  <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+<body>
+  <h1>Alarm App</h1>
+  <div id="main-container">
+
+    <div id="alarm-container">
+      <div id="clockContainer">
+        <div id="hour"></div>
+        <div id="minute"></div>
+        <div id="second"></div>
+      </div>
+      <div id="watchTime"></div>
+      <form id="alarm-form">
+        <label for="alarm-time">Time:</label>
+        <input type="time" id="alarm-time" required>
+        <button type="submit">Set</button>
+      </form>
+
+
+      <div id="alarms-list">
+        <h2>Alarms</h2>
+        <ul id="alarms"></ul>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+
+</html>
