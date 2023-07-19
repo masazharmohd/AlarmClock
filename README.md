@@ -8,7 +8,7 @@
  - Clone the project into local
     For example: 
     ```bash
-    git clone 
+    git clone https://github.com/masazharmohd/AlarmClock.git
     ```
 
 ### Step 2
