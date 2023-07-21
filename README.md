@@ -27,8 +27,8 @@
 
 
 <img width="1440" alt="Alarm-app" src="https://github.com/masazharmohd/AlarmClock/assets/90331775/bdc01180-0756-4917-add8-74cda303c445">
- # Steps of GitHub Action :-
- 1.Click on the setting of the Repo  choose Secrets and variables
+ # Live demo :-
+ [a link](https://masazharmohd.github.io/AlarmClock/)
  
 
 
