@@ -28,7 +28,7 @@
 
 <img width="1440" alt="Alarm-app" src="https://github.com/masazharmohd/AlarmClock/assets/90331775/bdc01180-0756-4917-add8-74cda303c445">
  # Live demo :-
- [a link](https://masazharmohd.github.io/AlarmClock/)
+ (https://masazharmohd.github.io/AlarmClock/)
  
 
 
