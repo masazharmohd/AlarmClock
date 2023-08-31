@@ -86,22 +86,30 @@ renderAlarms();
 
 // Analog Clock 
 setInterval(() => {
-  d = new Date(); //object of date()
-  hr = d.getHours();
-  min = d.getMinutes();
-  sec = d.getSeconds();
-  hr_rotation = 30 * hr + min / 2; //converting current time
-  min_rotation = 6 * min;
-  sec_rotation = 6 * sec;
+  let d = new Date(); //object of date()
+  let hr = d.getHours();
+  let min = d.getMinutes();
+  let sec = d.getSeconds();
+  let hr_rotation = 30 * hr + min / 2; //converting current time
+  let min_rotation = 6 * min;
+  let sec_rotation = 6 * sec;
 
   hour.style.transform = `rotate(${hr_rotation}deg)`;
   minute.style.transform = `rotate(${min_rotation}deg)`;
   second.style.transform = `rotate(${sec_rotation}deg)`;
 
   const time = document.getElementById("watchTime");
+
+  if(min < 10){
+    min = '0'+min;
+  }
+  if(sec < 10){
+    sec = '0'+sec;
+  }
   time.innerHTML = hr + ':' + min + ':' + sec;
 
   alarms.forEach((alarm, index) => {
+    
     if(alarm == hr + ':' + min + ':' + sec){
       alert("Your alarm will start now.");
     }
